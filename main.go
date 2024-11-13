@@ -15,22 +15,22 @@ func main() {
     var expirationDate string
     var value float64
     
-    fmt.Print("amount of vouchers :")
+    fmt.Print("amount of vouchers : ")
     fmt.Scanln(&amount)
     
     fmt.Print("voucher values : ")
     fmt.Scanln(&value)
 
-    fmt.Print("prefix :")
+    fmt.Print("prefix : ")
     fmt.Scanln(&prefix)
     
-    fmt.Print("name :")
+    fmt.Print("name : ")
     fmt.Scanln(&name)
     
-    fmt.Print("email :")
+    fmt.Print("email : ")
     fmt.Scanln(&email)
 
-    fmt.Print("expirationDate :")
+    fmt.Print("expirationDate (YYYY-MM-DD) : ")
     fmt.Scanln(&expirationDate)
 
     
