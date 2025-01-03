@@ -21,17 +21,22 @@ func main() {
     fmt.Print("voucher values : ")
     fmt.Scanln(&value)
 
-    fmt.Print("prefix : ")
+    fmt.Print("voucher code prefix (Default PV-) : ")
     fmt.Scanln(&prefix)
     
-    fmt.Print("name : ")
+    if(prefix == "") {
+        prefix = "PV"
+    }
+
+    fmt.Print("name of buyer : ")
     fmt.Scanln(&name)
     
-    fmt.Print("email : ")
+    fmt.Print("email/phone : ")
     fmt.Scanln(&email)
 
     fmt.Print("expirationDate (YYYY-MM-DD) : ")
     fmt.Scanln(&expirationDate)
+
 
     
     codes := make([]string, amount)
@@ -41,7 +46,13 @@ func main() {
 
     var csvCode string = printCsvCode(codes, value, name, email, expirationDate)
     
-    os.WriteFile(prefix+".csv", []byte(csvCode), 0644)
+    var fileName string = prefix;
+
+    if(fileName == "PV") {
+        fileName = "vouchers" + "-" + randStringBytes(4)
+    }
+
+    os.WriteFile(fileName+".csv", []byte(csvCode), 0644)
 }
 
 
