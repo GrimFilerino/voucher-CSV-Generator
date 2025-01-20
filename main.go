@@ -21,11 +21,11 @@ func main() {
     fmt.Print("voucher values : ")
     fmt.Scanln(&value)
 
-    fmt.Print("voucher code prefix (Default PV-) : ")
+    fmt.Print("voucher code prefix (Default BV-) : ")
     fmt.Scanln(&prefix)
     
     if(prefix == "") {
-        prefix = "PV"
+        prefix = "BV"
     }
 
     fmt.Print("name of buyer : ")
